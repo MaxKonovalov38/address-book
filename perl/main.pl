@@ -1,10 +1,29 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
+use lib 'Libs';
+use ViewContact;
+
+### Menu 'Address book' ###
+my $menu_data = <<EOF;
+-- Адресная книга --
+- Меню программы -
+1 - Просмотр
+2 - Добавить
+3 - Изменить
+4 - Удалить
+5 - Поиск
+0 - Выход
+EOF
+
+print($menu_data, "\nВыбирите пункт: ");
+my $number_menu = <STDIN>;
+chomp($number_menu);
 
 # function for displayning data in CL
 sub watch_contact {
-	return 0;
+	print("All: ", ViewContact::view_all());
+    print("Param: ", ViewContact::view_name_param());
 }
 
 # function for adding a contact
@@ -62,32 +81,25 @@ sub search_contact {
     close $fh or die "Error $!\n";
 }
 
-### Menu 'Address book' ###
-print("-- Адресная книга --\n");
-print("- Меню программы -\n");
-print("1 - Просмотр\n");
-print("2 - Добавить\n");
-print("3 - Поиск\n");
-print("0 - Выход\n");
+sub main {
+    my $num = shift;
+    ### Logic menu ###
+    if ( $num == 0 ) {
+        print("Exit!\n");
+        exit;
+    }
+    elsif ( $num == 1 ) {
+        &watch_contact();
+    }
+    elsif ( $num == 2 ) {
+        &add_contact();
+    }
+    elsif ( $num == 5 ) {
+        &search_contact();
+    }
+    else {
+        print("Variable not found!!\n");
+    }
+}
 
-print("Выбирите пункт: ");
-my $number_menu = <STDIN>;
-chomp($number_menu);
-
-### Logic menu ###
-if ( $number_menu == 0 ) {
-    print("Exit!\n");
-    exit;
-}
-elsif ( $number_menu == 1 ) {
-    &watch_contact();
-}
-elsif ( $number_menu == 2 ) {
-    &add_contact();
-}
-elsif ( $number_menu == 3 ) {
-    &search_contact();
-}
-else {
-    print("Variable not found!!\n");
-}
+main($number_menu);
