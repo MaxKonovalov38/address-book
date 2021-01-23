@@ -1,0 +1,6 @@
+# User parameters
+data.csv
+db/data.db
+# Perl
+Libs/
+# Git
