@@ -1,6 +1,8 @@
 # User parameters
-data.csv
-db/data.db
+DB/ad_book.db
+Log/info_text.txt
+example.pl
 # Perl
 Libs/
+Test/
 # Git
