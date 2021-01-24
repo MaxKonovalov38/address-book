@@ -3,6 +3,9 @@ DB/ad_book.db
 Log/info_text.txt
 example.pl
 # Perl
-Libs/
+Libs/DeleteContact.pm
+Libs/EditContact.pm
+Libs/SearchContact.pm
+Libs/ViewContact.pm
 Test/
 # Git
