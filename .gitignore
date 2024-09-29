@@ -1,11 +1,16 @@
-# User parameters
+### User parameters ###
 DB/ad_book.db
 Log/info_text.txt
 example.pl
-# Perl
+
+### Perl ###
+Libs/AddContact.pm
+Libs/FuncDate.pm
+Libs/FuncLog.pm
 Libs/DeleteContact.pm
 Libs/EditContact.pm
 Libs/SearchContact.pm
 Libs/ViewContact.pm
 Test/
-# Git
+
+### Git ###
